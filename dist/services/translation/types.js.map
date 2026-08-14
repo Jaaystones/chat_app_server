@@ -1,1 +1,0 @@
-{"version":3,"file":"types.js","sourceRoot":"","sources":["../../../src/services/translation/types.ts"],"names":[],"mappings":";;;AAeA,MAAa,wBAAyB,SAAQ,KAAK;IACjC,SAAS,CAAU;IAEnC,YAAY,OAAe,EAAE,SAAkB;QAC7C,KAAK,CAAC,OAAO,CAAC,CAAC;QACf,IAAI,CAAC,IAAI,GAAG,0BAA0B,CAAC;QACvC,IAAI,CAAC,SAAS,GAAG,SAAS,CAAC;IAC7B,CAAC;CACF;AARD,4DAQC"}
