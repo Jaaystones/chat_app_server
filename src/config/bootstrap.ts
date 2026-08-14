@@ -3,7 +3,7 @@ import { prisma } from './prisma';
 import { languageSeedData } from './languageSeedData';
 
 export async function bootstrapDatabase() {
-  execFileSync('./node_modules/.bin/prisma', ['migrate', 'deploy'], {
+  execFileSync('./node_modules/.bin/prisma', ['db', 'push', '--accept-data-loss', '--skip-generate'], {
     stdio: 'inherit',
   });
 
