@@ -20,12 +20,9 @@ export function createSocketServer(httpServer: HttpServer): SocketServer {
     },
   });
 
-  // Create dedicated Redis connections for Socket.IO pub/sub.
-  // The main Redis client remains available for application cache/denylist use.
   const pubClient = redis.duplicate();
   const subClient = redis.duplicate();
 
-  // Handle errors on the duplicated clients as well.
   pubClient.on('error', (err) => {
     console.error('Redis pub client error:', err.message);
   });
