@@ -30,4 +30,4 @@ COPY package.json ./
 
 EXPOSE 4000
 
-CMD ["sh", "-c", "pnpm exec prisma migrate deploy && node dist/server.js"]
+CMD ["node", "dist/server.js"]

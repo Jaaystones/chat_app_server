@@ -13,7 +13,7 @@ const server = http.createServer(app);
 const socketServer = createSocketServer(server);
 setIO(socketServer.io);
 
-server.listen(env.PORT, () => {
+server.listen(env.PORT, "0.0.0.0", () => {
   logger.info(`LinguaBridge backend listening on port ${env.PORT}`, { env: env.NODE_ENV });
 });
 
