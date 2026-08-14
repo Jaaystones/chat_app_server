@@ -18,6 +18,7 @@ COPY . .
 
 RUN pnpm exec prisma generate
 RUN pnpm run build
+RUN pnpm prisma:deploy && pnpm prisma:seed
 
 FROM base AS runtime
 
@@ -30,4 +31,4 @@ COPY package.json ./
 
 EXPOSE 4000
 
-CMD ["sh", "-c", "pnpm prisma:deploy && pnpm prisma:seed && node dist/server.js"]
+CMD ["node", "dist/server.js"]
