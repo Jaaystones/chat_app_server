@@ -3,6 +3,7 @@ import { TranslationProvider } from './types';
 import { mockProvider } from './providers/mock.provider';
 import { createLibreTranslateProvider } from './providers/libretranslate.provider';
 import { createDeepLProvider } from './providers/deepl.provider';
+import { createGoogleProvider } from './providers/google.provider';
 
 export function getConfiguredProvider(): TranslationProvider {
   switch (env.TRANSLATION_PROVIDER) {
@@ -14,9 +15,7 @@ export function getConfiguredProvider(): TranslationProvider {
       }
       return createDeepLProvider(env.DEEPL_API_KEY);
     case 'google':
-      throw new Error(
-        'Google Translate provider is not implemented — set TRANSLATION_PROVIDER=mock, libretranslate, or deepl',
-      );
+      return createGoogleProvider();
     case 'mock':
     default:
       return mockProvider;
